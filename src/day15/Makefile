@@ -1,11 +1,13 @@
 INCS=\
-	AocUtils.h
+	AocUtils.h\
+	FuncPool.h
 
 OBJS=\
 	AocUtils.o\
+	FuncPool.o\
 	main.o
 
-CFLGS=-c -mconsole -O3 -I ..\..\..\libdave64
+CFLGS=-c -mconsole -O2 -I ..\..\..\libdave64
 
 LIBS=..\..\..\libdave64\libdave.a
 
@@ -17,6 +19,9 @@ main.o : main.cpp $(INCS)
 
 AocUtils.o : AocUtils.cpp $(INCS)
 	g++ $(CFLGS) AocUtils.cpp
+
+FuncPool.o : FuncPool.cpp $(INCS)
+	g++ $(CFLGS) FuncPool.cpp
 
 clean :
 	rm *.o
